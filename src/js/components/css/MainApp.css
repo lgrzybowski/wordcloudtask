@@ -1,0 +1,41 @@
+html {
+    margin: 3%
+}
+
+.cloudComponent {
+    width: 50%;
+    margin: 0;
+    float: left;
+    max-width: 600px;
+}
+
+.detailsComponent {
+    margin-top: 15vh;
+    max-width: 500px;
+    height: 400px;
+    border: 1px solid;
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.defaultCloudText {
+    margin-top: 13vh;
+    font-size: 2em;
+}
+
+.topicCloud {
+    width: 100%;
+}
+
+.redText {
+    fill: red;
+}
+
+.greyText {
+    fill: grey;
+}
+
+.greenText {
+    fill: green;
+}

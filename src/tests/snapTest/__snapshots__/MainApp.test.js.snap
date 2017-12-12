@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check matching snapshot with component MainApp 1`] = `
+<div
+  className="topicCloud"
+>
+  <div
+    className="cloudComponent"
+  >
+    <svg
+      height={600}
+      width={600}
+    >
+      <g
+        transform="translate(300, 300)"
+      />
+    </svg>
+  </div>
+  <div
+    className="detailsComponent"
+  >
+    <div
+      className="defaultCloudText"
+    >
+      Click on topic cloud to see more details
+    </div>
+  </div>
+</div>
+`;

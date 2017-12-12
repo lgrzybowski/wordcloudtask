@@ -1,0 +1,10 @@
+.topicDetails ul {
+    list-style-type: none;
+    text-align: left;
+
+}
+
+.topicDetails li{
+    font-size: 1.4em;
+    padding-top: 0.4em;
+}
