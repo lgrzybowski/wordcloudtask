@@ -2,18 +2,17 @@ import React from 'react'
 import d3Cloud from 'd3-cloud'
 import PropTypes from 'prop-types'
 import TopicDetails from './TopicDetails'
-
-const fetchData = require('../../api/dataFetch')
-const helperObject = require('../helpingMethods/helpers')
+import fetchData from '../../api/dataFetch';
+import helperObject from '../helpingMethods/helpers';
 
 export default class MainClass extends React.Component {
   constructor () {
-    super()
+    super();
     this.state = {
       cloud: [],
       openTopicComponent: false,
       currentTopic: null
-    }
+    };
 
     this.clickTopic = this.clickTopic.bind(this)
   }
@@ -21,7 +20,7 @@ export default class MainClass extends React.Component {
   componentDidMount () {
     fetchData.fetchData()
             .then(data => {
-              let topics = helperObject.defineObjectWithFontSize(data, this.props.fontSizes)
+              let topics = helperObject.defineObjectWithFontSize(data, this.props.fontSizes);
 
               d3Cloud()
                     .size([this.props.width, this.props.height])
@@ -55,16 +54,6 @@ export default class MainClass extends React.Component {
     })
   }
 
-  setColor (cloud) {
-    if (cloud.topic.sentimentScore > 60) {
-      return 'greenText'
-    } else if (cloud.topic.sentimentScore < 40) {
-      return 'redText'
-    } else {
-      return 'greyText'
-    }
-  }
-
   render () {
     return (
       <div className='topicCloud'>
@@ -79,7 +68,7 @@ export default class MainClass extends React.Component {
                     fontSize: item.fontSize
                   }}
                   datatype={item.topic.label}
-                  className={this.setColor(item)}
+                  className={helperObject.setColor(item)}
                   textAnchor='middle'
                   transform={`translate(${item.x}, ${item.y} )`}
                                 >{item.topic.label}</text>
@@ -99,10 +88,10 @@ MainClass.propTypes = {
   fontSizes: PropTypes.array,
   width: PropTypes.number,
   height: PropTypes.number
-}
+};
 
 MainClass.defaultProps = {
   width: 600,
   height: 600,
   fontSizes: [35, 30, 20, 18, 17, 15]
-}
+};
